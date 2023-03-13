@@ -66,6 +66,8 @@ object Question_1 {
 ### Question - 2
 
 We need to answer the given questions(4), in order to work upon players we created a case class called players and declared some attributes to it, and played with them.
+#### Note - Please find that data abot the players are taken from .txt file and mapped.
+
 The below is the case class definition for a player object. It has six attributes:
 
 - Year: an integer representing the year in which the player played.
@@ -78,7 +80,7 @@ The below is the case class definition for a player object. It has six attribute
 ```
 case class Player(Year: Int, Name: String, Country: String, Matches: Int, Runs: Int, Wickets: Int)
 ```
-The read_data_from_file function uses the Source library to read data from the file, runs.txt. It then maps the lines of the file to player objects by splitting each line and creating a new Player object from the extracted values. The function returns a list of Player objects.
+The `read_data_from_file` function uses the Source library to read data from the file, runs.txt. It then maps the lines of the file to player objects by splitting each line and creating a new Player object from the extracted values. The function returns a list of Player objects.
 
 ```
   private def read_data_from_file(): List[Player] = {
@@ -100,7 +102,7 @@ The read_data_from_file function uses the Source library to read data from the f
 
 ```
 
-The print_player_info function takes a list of Player objects and prints out information such as the name, country, year, runs, matches, and wickets for each player. The function uses a for loop to iterate through each player object in the list and prints out the information using println.
+The `print_player_info` function takes a list of Player objects and prints out information such as the name, country, year, runs, matches, and wickets for each player. The function uses a for loop to iterate through each player object in the list and prints out the information using println.
 
 ```
   private def print_player_info(playerobjects: List[Player]): Unit = {
@@ -115,7 +117,7 @@ The print_player_info function takes a list of Player objects and prints out inf
 
 ```
 
-The print_player_info_with_ranks function is similar to print_player_info, but it also calculates and prints out a performance metric based on the player's runs and wickets. The performance metric is calculated as 5 times the number of wickets plus 0.05 times the number of runs. The function takes a list of Player objects and prints out the same information as print_player_info, but also includes the rank of the player based on their performance metric.
+The `print_player_info_with_ranks` function is similar to print_player_info, but it also calculates and prints out a performance metric based on the player's runs and wickets. The performance metric is calculated as 5 times the number of wickets plus 0.05 times the number of runs. The function takes a list of Player objects and prints out the same information as print_player_info, but also includes the rank of the player based on their performance metric.
 
 ```
   private def print_player_info_with_ranks(playerobjects: List[Player]): Unit = {
@@ -133,24 +135,30 @@ The print_player_info_with_ranks function is similar to print_player_info, but i
 
 The main function creates an instance of Question_2 and uses it to call the other functions to answer four questions.
 
-#### 2.1
+#### Question 2.1
 The operation is finding the player with the highest number of runs, using the sortBy method with the Runs attribute and a reverse ordering and below is snippet of code.
 
 ```
 obj.print_player_info(players.sortBy(_.Runs)(Ordering[Int].reverse).take(1))
 ```
 
+#### Question 2.2
 The operation is finding the top 5 players by runs, again using the sortBy method with the Runs attribute and a reverse ordering, and then taking the first five elements of the resulting collection.
 
 ```
 obj.print_player_info(players.sortBy(_.Runs)(Ordering[Int].reverse).take(5))
 ``` 
 
+#### Question 2.3
 The operation is finding the top 5 players by wickets, using the sortBy method with the Wickets attribute and a reverse ordering, and again taking the first five elements of the resulting collection.
+
 ```
 obj.print_player_info(players.sortBy(_.Wickets)(Ordering[Int].reverse).take(5))
 ```
+
+#### Question 2.4
 The operation is computing a composite ranking score for each player as 5 times their number of wickets plus 0.05 times their number of runs, sorting the players by this metric in reverse order, and selecting the top 5 players. The sortBy method is used here again, but with a custom function that computes the ranking score for each player.
+
 ```
 obj.print_player_info_with_ranks(players.sortBy(r => 5 * r.Wickets + 0.05 * r.Runs)(Ordering[Double].reverse).take(5))
 ```
