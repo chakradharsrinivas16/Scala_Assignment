@@ -59,7 +59,7 @@ class Question_2 {
     // For loop for traversing through the objects in the list
     for (playerobject <- playerobjects) {
       // Printing the data in the object
-      println("Name : " + playerobject.Name + "\nRank : " + cnt + "\nCounty : " + playerobject.Country + "\nYear : " + playerobject.Year + "\nRuns : " + playerobject.Runs + "\nMatches : " + playerobject.Matches + "\nWickets : " + playerobject.Wickets + "\nPerformance : " + 5 * playerobject.Wickets + 0.05 * playerobject.Runs)
+      println("Name : " + playerobject.Name + "\nRank : " + cnt + "\nCounty : " + playerobject.Country + "\nYear : " + playerobject.Year + "\nRuns : " + playerobject.Runs + "\nMatches : " + playerobject.Matches + "\nWickets : " + playerobject.Wickets + "\nPerformance : " + (5 * playerobject.Wickets + 0.05 * playerobject.Runs))
       cnt = cnt + 1 // Incrementing the counter for serial NO
       println()
     }
