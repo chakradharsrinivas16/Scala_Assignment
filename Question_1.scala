@@ -8,7 +8,7 @@ class Question_1() {
   def get_bucket(n: Double): Unit = {
     // Fetching the last two digits
     var last_two_digits = (String.format("%.2f", (n * 1000) % 100))
-    print(f"Value :  $n%,.2f") // Printing the fetched digits
+    print(f"Value :  $n") // Printing the fetched digits
     /*
     * If the value of the last two digits after the decimal point is greater than or equal to 50,
     * then the bucket range is from `n - (last two digits/1000) + 0.050 to n + (99 - last two digits)/1000`.
