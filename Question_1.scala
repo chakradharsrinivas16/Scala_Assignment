@@ -1,15 +1,15 @@
 class Question_1() {
   def get_bucket(n: Double): Unit = {
-    var temp = (String.format("%.2f", (n * 1000) % 100))
+    var last_two_digits = (String.format("%.2f", (n * 1000) % 100))
     print(f"Value :  $n%,.2f")
-    if (temp.toDouble >= 50) {
-      val left = n - (temp.toDouble / 1000) + 0.050
-      val right = n + (99 - temp.toDouble) / 1000
+    if (last_two_digits.toDouble >= 50) {
+      val left = n - (last_two_digits.toDouble / 1000) + 0.050
+      val right = n + (99 - last_two_digits.toDouble) / 1000
       print(f" Bucket : $left%,.3f" + " - " + f"$right%,.3f\n")
     }
     else {
-      val left = n - (temp.toDouble / 1000)
-      val right = n + (49 - temp.toDouble) / 1000
+      val left = n - (last_two_digits.toDouble / 1000)
+      val right = n + (49 - last_two_digits.toDouble) / 1000
       print(f" Bucket : $left%,.3f" + " - " + f"$right%,.3f\n")
     }
   }
