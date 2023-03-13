@@ -125,7 +125,7 @@ The `print_player_info_with_ranks` function is similar to print_player_info, but
     // For loop for traversing through the objects in the list
     for (playerobject <- playerobjects) {
       // Printing the data in the object
-      println("Name : " + playerobject.Name + "\nRank : " + cnt + "\nCounty : " + playerobject.Country + "\nYear : " + playerobject.Year + "\nRuns : " + playerobject.Runs + "\nMatches : " + playerobject.Matches + "\nWickets : " + playerobject.Wickets + "\nPerformance : " + 5 * playerobject.Wickets + 0.05 * playerobject.Runs)
+      println("Name : " + playerobject.Name + "\nRank : " + cnt + "\nCounty : " + playerobject.Country + "\nYear : " + playerobject.Year + "\nRuns : " + playerobject.Runs + "\nMatches : " + playerobject.Matches + "\nWickets : " + playerobject.Wickets + "\nPerformance : " + 5 * playerobject.Wickets + (0.05 * playerobject.Runs))
       cnt = cnt + 1 // Incrementing the counter for serial NO
       println()
     }
@@ -171,5 +171,4 @@ After sorting and selecting the relevant players in each operation, the print_pl
 
 <img width="401" alt="Screenshot 2023-03-13 at 10 31 00 PM" src="https://user-images.githubusercontent.com/123494344/224773192-14e845a6-130c-45e8-a7ff-eaeec5473a79.png">
 
-<img width="427" alt="Screenshot 2023-03-13 at 10 31 17 PM" src="https://user-images.githubusercontent.com/123494344/224773246-930f195b-b79e-4cb4-92d8-3ac4eb9c4fcb.png">
-
+<img width="381" alt="Screenshot 2023-03-14 at 1 56 48 AM" src="https://user-images.githubusercontent.com/123494344/224824539-0b2d0811-e497-48e1-9320-c1b56f5cabdd.png">
