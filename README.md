@@ -1,6 +1,6 @@
 # Scala_Assignment
 
-The assignemnt has 2 questions, I have used classes and objects to fetch the desired output.
+The assignement has 2 questions, I have used classes and objects to fetch the desired output.
 
 ### Question - 1
 
@@ -90,7 +90,7 @@ The `read_data_from_file` function uses the Source library to read data from the
       // Mapping the line and object created
       .map(line => {
         // Storing the values obtained by splitting the fetched line
-        val Array(year, name, country, matches, runs, wickets) = line.split(", ")
+        val Array(year, name, country, matches, runs, wickets) = line.trim.split(", ")
         // Creating objects from the fecthed values above
         Player(year.toInt, name, country, matches.toInt, runs.toInt, wickets.toInt)
       })
