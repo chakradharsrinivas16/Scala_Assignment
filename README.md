@@ -1,6 +1,6 @@
 # Scala_Assignment
 
-The assignemnt has 2 questions, I have used classes and objects to fetch the desired output.
+The assignment has 2 questions, I have used classes and objects to fetch the desired output.
 
 ### Question - 1
 
