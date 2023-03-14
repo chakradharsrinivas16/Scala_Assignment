@@ -24,7 +24,7 @@ class Question_2 {
       // Mapping the line and object created
       .map(line => {
         // Storing the values obtained by splitting the fetched line
-        val Array(year, name, country, matches, runs, wickets) = line.split(", ")
+        val Array(year, name, country, matches, runs, wickets) = line.trim.split(", ")
         // Creating objects from the fecthed values above
         Player(year.toInt, name, country, matches.toInt, runs.toInt, wickets.toInt)
       })
