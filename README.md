@@ -26,19 +26,18 @@ The given code defines a class Question_1 with a single method get_bucket that t
 If the value of the last two digits after the decimal point is greater than or equal to 50, then the bucket range is from `n - (last two digits/1000) + 0.050 to n + (99 - last two digits)/1000`.
 Otherwise, the bucket range is from `n - (last two digits/1000) to n + (49 - last two digits)/1000`.
 ```
-class Question_1() {
   def get_bucket(n: Double): Unit = {
-    var temp = (String.format("%.2f", (n * 1000) % 100))
-    print(f"Value :  $n%,.2f")
-    if (temp.toDouble >= 50) {
-      val left = n - (temp.toDouble / 1000) + 0.050
-      val right = n + (99 - temp.toDouble) / 1000
-      print(f" Bucket : $left%,.3f" + " - " + f"$right%,.3f\n")
+    var last_two_digits = (n * 1000) % 100
+    print(f"Value :  $n") // Printing the fetched digits
+    if (last_two_digits >= 50) {
+      val left = n - (last_two_digits / 1000) + 0.050 // Calculating and Storing the left limit
+      val right = n + (99 - last_two_digits) / 1000 // Calculating and Storing the right limit
+      print(f" Bucket : $left%,.3f" + " - " + f"$right%,.3f\n") // Printing the fetched limits
     }
     else {
-      val left = n - (temp.toDouble / 1000)
-      val right = n + (49 - temp.toDouble) / 1000
-      print(f" Bucket : $left%,.3f" + " - " + f"$right%,.3f\n")
+      val left = n - (last_two_digits / 1000) // Calculating and Storing the left limit
+      val right = n + (49 - last_two_digits) / 1000 // Calculating and Storing the right limit
+      print(f" Bucket : $left%,.3f" + " - " + f"$right%,.3f\n") // Printing the fetched limits
     }
   }
 }
